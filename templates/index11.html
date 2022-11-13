@@ -1,0 +1,713 @@
+{% extends "header.html" %}
+{% block body%}
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Basic Page Info -->
+		<meta charset="utf-8" />
+		<title>IGMS</title>
+
+		<!-- Site favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="vendors/images/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="vendors/images/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="vendors/images/rrr.png"
+		/>
+
+		<!-- Mobile Specific Metas -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1"
+		/>
+
+		<!-- Google Font -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendors/styles/icon-font.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/datatables/css/dataTables.bootstrap4.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/plugins/datatables/css/responsive.bootstrap4.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GBZ3SGGX85");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+		</script>
+		<script>
+		$(document).ready(function () {
+			$('#dtDynamicVerticalScrollExample').DataTable({
+			  "scrollY": "50vh",
+			  "scrollCollapse": true,
+			});
+			$('.dataTables_length').addClass('bs-select');
+		  });
+		</script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		
+
+		<div class="header">
+			<div class="header-left">
+				<div class="menu-icon bi bi-list"></div>
+				<div
+					class="search-toggle-icon bi bi-search"
+					data-toggle="header_search"
+				></div>
+				<div class="header-search">
+					<form>
+						<div class="form-group mb-0">
+							<i class="dw dw-search2 search-icon"></i>
+							<input
+								type="text"
+								class="form-control search-input"
+								placeholder="Search Here"
+							/>
+							<div class="dropdown">
+								<a
+									class="dropdown-toggle no-arrow"
+									href="#"
+									role="button"
+									data-toggle="dropdown"
+								>
+									<i class="ion-arrow-down-c"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<div class="form-group row">
+										<label class="col-sm-10 col-md-2 col-form-label"
+											>From</label
+										>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label">To</label>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									<div class="form-group row">
+										<label class="col-sm-12 col-md-2 col-form-label"
+											>Subject</label
+										>
+										<div class="col-sm-12 col-md-10">
+											<input
+												class="form-control form-control-sm form-control-line"
+												type="text"
+											/>
+										</div>
+									</div>
+									
+									<div class="text-right">
+										<button class="btn btn-primary">Search</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+	
+			
+				<div class="user-info-dropdown">
+					<div class="dropdown">
+						<a
+							class="dropdown-toggle"
+							href="#"
+							role="button"
+							
+						>
+							<span class="user-icon">
+								<img src="vendors/images/user2.png" alt="" />
+							</span>
+							
+							<span class="user-name "><b>@ User-name<b><br>
+								
+								<p class="small">(Data Entry Oparetor)</p></span>
+								
+						</a>
+						
+
+						
+					</div>
+					
+				</div>
+				
+				<div class="logout">
+				<a href="#" class="btn btn-danger btn-lg">
+					
+					<span class="glyphicon glyphicon-log-out"></span> Log out
+					<i class="bi bi-box-arrow-right"></i>
+				  </a>
+				  
+				</div>
+		
+				</div>
+			</div>
+		</div>
+
+		<div class="left-side-bar">
+			<div class="brand-logo">
+				
+				
+				<a href="index11.html">
+					
+					<img
+						src="vendors/images/a.svg"
+						alt=""
+						
+					/>
+				</a>
+
+		
+				<div class="close-sidebar" data-toggle="left-sidebar-close">
+					
+				</div>
+			</div>
+			<div class="menu-block customscroll">
+				<div class="sidebar-menu">
+					<ul id="accordion-menu">
+						<div class="text-center">
+
+							<a href="index11.html" class="">
+							
+								<button type="button" class="mt-1 bi bi-grid  btn-danger btn-lg btn-block ">Dashboard</button><br>
+							</a>
+							<br>
+						</div>
+						<div class="text-left">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle">
+								<span  class="micon  bi-headset"></span
+								><span class="mtext">Grievance Management</span>
+							</a>
+							<ul class="submenu">
+
+
+								<li><a href="newcomplain.html">New Complainant Entry</a></li>
+								<li><a href="outbound.html">Outbound Call Entry</a></li>
+								
+                                   
+								<li><a href="#">Return Assignment to HOD</a></li>
+								<li><a href="#">Action File Upload</a></li>
+								<li><a href="#">EMIS Archive</a></li>
+								<li><a href="#">Helpline Call</a></li>
+								<li><a href="outbound.html">OutBound Call</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle">
+                                        <span  class="micon  bi-pencil-square"></span
+                                        ><span class="mtext">Edit</span>
+                                    </a>
+                                  
+                                <ul class="submenu">
+                            <li><a href="close.html">Close Complain Docket</a></li>
+                            <li><a href="open.html">Open Complain Docket</a></li>
+                      </ul>
+                        </li>
+							</ul>
+						</li>
+					</div>
+				<div class="text-left">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle">
+								<span class="micon bi bi-hammer"></span
+								><span class="mtext">Hearing Management</span>
+							</a>
+							<ul class="submenu">
+					<li><a href="create_hearing.html">Create Hearing Date</a></li>
+								<li><a href="hearing_calander.html">Hearing Calendar</a></li>
+								<li><a href="hearing_cheaklist.html">	Hearing Checklist</a></li>
+								<li><a href="Hearing_Docket_Allotment.html">Hearing Docket Allotment</a></li>
+								<li><a href="hearing_status.html">Update Hearing Status</a></li>
+								<li><a href="#">Update KYC</a></li>
+							</ul>
+						</li>
+					
+					</div>
+		
+					<div class="text-left">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle">
+								<span class="micon bi bi-envelope"></span
+								><span class="mtext"> Document & Letters</span>
+							</a>
+							<ul class="submenu">
+								
+								
+								
+
+							
+						
+								<li><a href="issueld letter.html">Issue LD Letter</a></li>
+								<li><a href="issueotherletter.html">Issue Other Letter</a></li>
+								<li><a href="view&print.html">View & Print Letter</a></li>
+								
+								
+							</ul>
+						</li>
+					</div>
+
+					<div class="text-left">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle">
+								<span class="micon bi bi-file-text"></span
+								><span class="mtext"> Reports & Registers</span>
+							</a>
+	
+							<ul class="submenu">
+								<li><a href="Complain_Register.html">Complain Register</a></li>
+								<li><a href="Action_Taken_Report.html">Action Taken Report</a></li>
+								<li><a href="Inspection_Register.html">Inspection Register</a></li>
+								<li><a href="#">Pending LD Letter</a></li>
+								<li><a href="Pending_Inspection.html">Pending Inspection</a></li>
+								<li><a href="Hearing_Register.html">Hearing Register</a></li>
+								<li><a href="pendinghearing.html">Pending Hearing</a></li>
+								<li><a href="feedbackreport.html">Feedback Report</a></li>
+								<li><a href="#">Department Report</a></li>
+								<li><a href="pgcelldatareport.html">PG Cell Data Report</a></li>
+								
+								<li>     </li>
+							
+							</ul>
+						</li>
+					</div>
+					
+							
+							</ul>
+						</li>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- body start-->
+
+
+		<div class="mobile-menu-overlay"></div>
+
+		<div class="main-container">
+			<div class="xs-pd-0-0 pd-ltr-20">
+				<div class="title pb-20">
+					<h2 class="h3 mb-0">Data Entry Oparetor</h2>
+				</div>
+				<div class="pd-ltr-10">
+					<div class="card-box  height-100-p mb-30">
+						<div class="row align-items-center">
+							
+							<div class="col-md-6">
+								
+							<div class="p-2 mb-1 ml-1 mt-0 bg-info rounded text-white">
+								<a href="#" target="_blank" >
+									<img src="B.png" alt=""/></a>
+							</div>
+							<div class="p-2 mb-1 ml-1 mt-0 bg-info rounded text-white">
+								<p class="text-dark">WELCOME to- Cental Grievance Management</p>
+								<p class="text-dark">You have logged in as:</p>
+								
+									<mark class=" p-1 ml-5  rounded">@ User_name   <b  class="small">( Data Entry Oparetor )<b></mark></div>
+							
+									
+							</div>
+							<div
+					            class="card-box min-height-200px pd-10 mb-1 ml-5 mt-1"
+					data-bgcolor="#0A3C3F"
+				>
+				<div class="d-flex justify-content-between pb-2 text-white">
+					<div class="icon h2 text-white">
+						<i class="fa fa-calendar"style="font-size:25px" aria-hidden="true"></i>
+						<br>
+						<!-- <i class="icon-copy fa fa-stethoscope" aria-hidden="true"></i> -->
+					</div>
+					<br><div class="font-18 text-left">
+					<div class="pt-1 pl-1"> Hearing Calendar</div>	
+					</div>
+					
+				</div>
+				<marquee direction = "right"><mark class="pt-5 ml-2  rounded">Next Hearing Date 03.09.2022 <mark>
+						
+				</marquee> 
+				<marquee direction = "right">
+					<br>
+					<mark class="pt-1 ml-2  rounded">Next Hearing Date 03.09.2022 <mark>
+					</marquee> 
+						<br>
+					
+				</marquee> 
+			</div>
+			
+				
+			</div>
+						</div>
+						
+					</div>
+				<div class="row pb-10">
+					<div class="col-xl-3 col-lg-3 col-md-5 mb-20">
+						<div class="card-box  widget-style3">
+							<a href="MS.html" >	
+								<div class="cl">
+							<div class="d-flex flex-wrap">
+								<div class="widget-data">
+								 
+									<div class="font-14 text-white weight-500">
+										Total New Complaint
+									</div>
+									<div class="weight-700 font-24 text-white">5528</div>
+								  </div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+					
+					<div class="col-xl-3 col-lg-3 col-md-5 mb-20">
+						
+						<div class="card-box  widget-style3">
+							<a href="#" >	
+								<div class="clr">
+							<div class="d-flex flex-wrap">
+								<div class="widget-data">
+								 
+									<div class="font-14 text-white weight-500">
+										Important Complaint
+									</div>
+									<div class="weight-700 font-24 text-white">5528</div>
+								  </div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-5 mb-20">
+					<div class="card-box  widget-style3">
+						<a href="MS.html" >	
+							<div class="p">
+						<div class="d-flex flex-wrap">
+							<div class="widget-data">
+							 
+								<div class="font-14 text-white weight-500">
+									Closed Complaint
+								</div>
+								<div class="weight-700 font-24 text-white">5528</div>
+							  </div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+					
+				<div class="col-xl-3 col-lg-3 col-md-5 mb-20">
+					<div class="card-box height-100-p widget-style3">
+						<a href="#" >	
+							<div class="s">
+						<div class="d-flex flex-wrap">
+							<div class="widget-data">
+							  
+								<div class="font-14 text-white weight-500">
+								 Total Feedback 
+								</div>
+								<div class="weight-700 font-24 text-white">528</div>
+							  </div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		
+
+					<div class="col-xl-3 col-lg-3 col-md-5 mb-20">
+						<div class="card-box height-100-p widget-style3">
+							<a href="#" >	
+								<div class="c">
+							<div class="d-flex flex-wrap">
+								<div class="widget-data">
+								  
+									<div class="font-14 text-white weight-500">
+										Task Incomplete
+									</div>
+									<div class="weight-700 font-24 text-white">128</div>
+								  </div>
+								
+							</div>
+						</div>
+					</div>
+                    
+				</div>
+			</div>
+
+		  <div class="card-box mb-30">
+			<div class="pd-20">
+				<h4 class="text-black h4">Total Complaint List</h4>
+			</div>
+
+		   <div style =" height:430px;  overflow:scroll; padding: 10px;">
+			<div class="mb">
+	
+				
+					
+						<table id="dtVerticalScrollExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+	width="100%">
+	<thead>
+	  <tr>
+		<th class="th-sm">Sl.</th>
+		<th class="th-sm">Docket No.</th>
+		<th class="th-sm">Call Date</th>
+        
+		
+		<th class="th-sm">Complainant</th>
+		<th class="th-sm">Complain Through</th>
+		<th class="th-sm">Complained Against</th>
+		<th class="th-sm">Status</th>
+	    
+		
+	</thead>
+	<tbody>
+	  <tr>
+		<td>1</td>
+		<td>PCB0020</td>
+		<td>02-10-2019</td>
+		<td>anmol maji</td>
+        <td>CPCB</td>
+					
+		
+		<td>bimoy maji</td>
+		<td>	<span class="badge badge-success">  open  </span></td>
+	
+	
+	
+	  </tr>
+
+	</tbody>
+	<tbody>
+		<tr>
+			<td>2</td>
+			<td>PCB0021</td>
+			<td>02-10-2019</td>
+			<td>mrinmoy jana</td>
+			<td>CPCB</td>
+						
+			
+			<td>bijoy maji</td>
+			<td>	<span class="badge badge-primary">  cancel  </span></td>
+		
+		  </tr>
+  
+	  </tbody>
+	  
+
+	
+
+						
+				</table>
+				
+				
+			</div>
+		</div>
+	</div>	<br>
+		</div>
+		</div>
+		
+		<!-- js -->
+		<script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+		<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
+		<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+		<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+		<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+		<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+		<script src="vendors/scripts/dashboard3.js"></script>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<style>
+			{%endfor%}
+			.header{
+				background-color: #0A3C3F;
+			}
+			.menu-block{
+				background-color:#0A3C3F;
+			}
+			.brand-logo{
+				background-color:#0A3C3F;
+			}
+			.button{
+				text-align:center;
+			}
+			.xs-pd-20-10{
+				background: linear-gradient(169deg, rgb(3, 148, 108) 0.00%, rgb(33, 35, 34) 88.58%);;
+			}
+			.a{
+				color:white;
+			}
+			.sidebar-menu .submenu li a {
+				display: block;
+				padding: 1px 15px 14px 60px;
+				font-size: 14px;
+				
+			}
+		
+			.user-info-dropdown .dropdown-toggle .user-name {
+				font-weight: 500;
+			
+				color: white;
+			
+
+			
+			padding-top: 1px;
+			padding-bottom: 5px;
+			padding-left: 10px;
+			padding-right: 10px;
+			margin: auto;
+			
+		
+			font-family: 'Montserrat', sans-serif;
+			font-size: 14px;
+			font-weight: bold;
+			color: #fff;
+			text-align: left;
+			height: 30px
+			}
+			.logout{
+    padding-top: 0.719rem;
+    padding-right: 1rem;
+    padding-bottom: 0.719rem;
+    padding-left: 1rem;
+			}
+			
+			.brand-logo a .svg, .brand-logo a img {
+			    
+				max-width: 100%;
+    display: block;
+    height: auto;
+			}
+			.ani{
+				margin-left:872px;
+				margin-top:1px;
+				margin-bottom:2px;
+				
+			}
+			.min-height-200px {
+				min-height: 120px;
+				min-width: 575px;}
+				.mb{
+					margin-right:2px;
+				}
+				.xs-pd-0-0 {
+					background: #8aa8ead6;
+				}
+				.widget-icon{
+					background:red;
+				}
+				.widget-style3 .widget-icon {
+					width: 60px;
+					font-size: 30px;
+					line-height: 1;
+					text-align: center;
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
+					align-items: center;
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+					background: #0A3C3F;
+					color: #fff;
+				}
+				img {
+					border: 0;
+					vertical-align: top;
+					max-width: 45%;
+					height: auto;
+				}
+				.min-height-200px {
+					min-height: 200px;
+					min-width: 95px;
+				}
+				.col-lg-3 {
+				
+					max-width: 20%;
+				 }
+				 .clr{
+					background-color:#0d6efdd1;
+				 }
+				 .cl{
+					background-color: #10066a;
+				 }
+				 .c{
+					background-color:#692e9ff0;
+				 }
+				 .s{
+					background-color:#cf2e2e;
+				 }
+				 .p{
+					background-color:#036a6d
+				 }
+		<!-- End Google Tag Manager (noscript) -->
+	</body>
+</html>

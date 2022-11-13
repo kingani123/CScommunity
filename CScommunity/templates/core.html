@@ -1,0 +1,40 @@
+{% extends "header.html" %}
+{% block request %}{{unverified_user_count}}{% endblock %}
+
+{% block body%}
+
+    <head>
+        <meta charset="='utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}Djangochat</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .chat-message{
+        height: 400px;
+        overflow-y: auto;
+    }
+    .navbar-item {
+     color: white;
+    }
+    a{
+        text-decoration:none ;
+    }
+    h3{
+        width: -10%;
+        color:white;
+        text-align: center;
+    }
+</style>
+    </head>
+    <body class="bg-teal-600">
+      
+        </div>
+        {% block content %}
+        {% endblock %}
+        
+        {% block scripts %}
+        {% endblock %}
+        
+    </body>
+
+{% endblock %}

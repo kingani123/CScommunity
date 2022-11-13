@@ -1,0 +1,223 @@
+
+
+{% extends "header.html" %}
+
+{% block request %}{{unverified_user_count}}{% endblock %}
+
+{% block body%}<div class="main" style="margin-top:10vh;">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1 p-0">
+            
+        
+        </div>
+        <div class="col-lg-11 p-2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col">
+                        <div class="post-update card status-update-card"
+<style="background-color:rgba(69, 128, 238, 0.2); border-color:rgb(219, 219, 226);">
+<div class="card-body">
+                    <div class="col-10 offset-1">
+                        <div class="container bootstrap snippet">
+                          
+                            <h1 class="text-primary"><i class="fa fa-user mr-1"></i>Your Profile</h1>
+                            
+                            
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-3 text-center">
+                                            <img src=" {{user_profile.profileimg.url}}" alt="" width="220" height="220n8" class="img-circle rounded-circle mb-2">
+                                        </div>
+                                        <div class="col-8 ml-5">
+                                            <div class="row mt-4">
+                                                <div class="col-9">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                     <strong>       <h4 class="full-name w-100"><span>{{user_profile.name}}</span></h4></strong>
+                                                        </div>
+                                                                                                                    <div class="col">
+                                                                <a href="/setting" class="btn btn-outline-dark">Edit Profile</a>
+                                                            </div>
+                                                                                                            </div>
+
+
+                                                    <h5 class="user-name">{{user.email}}</h5>
+
+
+
+                                                    
+                                                    
+                                                                                                    </div>
+                                                <div class="col-3">
+                                                                                                    </div>
+                                            </div>
+                                            <div class="row mt-5">
+                                             
+                                                        
+                                                    
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div class="row">
+                                        <div class="col">
+                                           
+                                              
+                                              <h3>Name</h3>
+                                                    <span>     <h4 class="full-name w-106">:- <span>{{user_profile.name}}</span></h4></strong>
+                                                       </div>
+                                                
+                                            </div>
+                                            <hr>
+                                            <hr>
+                                            <h3>Contact</h3>
+                                            <span>     </h5 >  :- +91 <span>{{user_profile.contact}}</span></h5></strong>
+                                               
+                                               <hr>
+                                               <hr>
+                                               <h3>Batch</h3>
+                                                    </h5 >  :-  <span>{{user_profile.batch}}</span></h5></strong>
+                                                  
+                                                  <hr>
+                                                  <hr>
+                                                  <h3>Bio</h3>
+                                                  <span>     </h5 >  :-  <span>{{user_profile.bio}}</span></h5></strong>
+                                                     
+                                                     <hr>
+                                                     <hr>
+                                                     <h3>Location</h3>
+                                                     <span>     </h5 >  :- <span>{{user_profile.location}}</span></h5></strong>
+                                                       
+                                                        <hr>
+                                                        <hr>
+                                                        <h3>Techinal Experiance</h3>
+                                                        <span>     </h5 >  :-  <span>{{user_profile.techinal_experiance}}</span></h5></strong>
+                                                          
+                                                           <hr>
+                                                           <hr>
+                                                           <h3>Working In</h3>
+                                                           <span>     </h5 >  :-  <span>{{user_profile.working}}</span></h5></strong>
+                                                              </div>
+
+                                            
+                                           
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>      
+
+
+        <hr>
+        
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="gallery">
+                </div>
+        <!-- End of gallery -->
+
+        <div class="loader"></div>
+
+    </div>
+    <!-- End of container -->                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     
+                </div>                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        background: #1A2238 url("https://www.toptal.com/designers/subtlepatterns/patterns/sports.png") fixed;
+    }
+</style>
+
+<script>
+    $(document).on('click', '.like', function(e) {
+        var this_elem = $(this);
+        e.preventDefault();
+        post_id = $(this).attr('href');
+        user_id = 5;
+        $.ajax({
+            type: "GET",
+            datatype: "json",
+            url: "like_script.php",
+            data: "post_id=" + post_id + "&user_id=" + user_id,
+            cache: false,
+            success: function(data) {
+                data = JSON.parse(data);
+                if (data.status == 'liked') {
+                    this_elem.parent().parent().prev().find('.likes').text(data.total_likes);
+                    this_elem.find('.likes').text(data.total_likes);
+                    this_elem.find('#like-text').text('Unlike');
+                    this_elem.find('.unliked').addClass('liked').removeClass('unliked');
+                } else if (data.status == 'unliked') {
+                    this_elem.parent().parent().prev().find('.likes').text(data.total_likes);
+                    this_elem.find('.likes').text(data.total_likes);
+                    this_elem.find('#like-text').text('Like');
+                    this_elem.find('.liked').addClass('unliked').removeClass('liked');
+                } else {
+                    alert(data.status);
+                }
+            },
+            error: function(jqXHR, exception) {
+                alert('error: ' + eval(jqXHR.status));
+            }
+        });
+    });
+
+    $('#follow').on('click', function(e) {
+        var this_elem = $(this);
+        e.preventDefault();
+        follow_id = $(this).attr('href');
+        user_id = 5;
+        $.ajax({
+            type: "GET",
+            datatype: "json",
+            url: "follow_script.php",
+            data: "user_id=" + user_id + "&follow_id=" + follow_id,
+            cache: false,
+            success: function(data) {
+                data = JSON.parse(data);
+                if (data.status == 'followed') {
+                    $('#follow').text('Unfollow');
+                    $('#followers').text(data.followers);
+                    $('#following').text(data.following);
+                } else if (data.status == 'unfollowed') {
+                    $('#follow').text('Follow');
+                    $('#followers').text(data.followers);
+                    $('#following').text(data.following);
+                } else {
+                    alert(data.status);
+                }
+            },
+            error: function(jqXHR, exception) {
+                alert('error: ' + eval(jqXHR.status));
+            }
+        });
+    });
+</script>
+
+</html>
+{%endblock%}
+{% include "footer.html" %}

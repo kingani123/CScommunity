@@ -1,0 +1,458 @@
+
+ 
+<!DOCTYPE HTML>
+
+
+
+
+
+
+ <head>
+  <title>IGMS - Grievance Management</title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="shortcut icon" type="image/png" href="images/igms.png"/>
+  <link rel="stylesheet" href="css/appstyle.css">
+  <link rel="stylesheet" href="css/dropdownstyle.css">
+  <link rel="stylesheet" href="css/pagestyle.css">
+   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>	
+   <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
+      
+    <script type="text/javascript" src="js/jquery-ui.js"></script>	
+<script type="text/javascript" src="js/dropdown.js"></script>
+<script type="text/javascript" src="js/po.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/datepickr.css" />
+
+   
+   <script>
+    $(function(){
+        $(":text").attr("autocomplete", "off");
+    });
+   </script>
+   
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <script>
+  function go_dashboard()
+	{
+	document.location.href="/IGMS/loadDashboard.do?method=loadDashboard";
+	}
+  </script>
+</head>
+
+
+<script>
+function load_dashboard_management()
+{
+	var url="/IGMS/viewDashboard.do?method=loadDashboard";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+}
+function load_dashboard_agent()
+{
+	var url="/IGMS/viewDashboardAgent.do?method=loadHomeDashboardAgent";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+}
+function load_dashboard_region()
+{
+	var url="/IGMS/viewDashboardHomeRegion.do?method=loadHomeDashboardRegion";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+}
+function load_dashboard_pgcell()
+{
+	var url="/IGMS/viewDashboardHomePgcell.do?method=loadHomeDashboardPgcell";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+}
+function load_dashboard_user()
+{
+	var url="/IGMS/viewDashboardHomePgcellUser.do?method=loadHomeDashboardPgcellUser";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+}
+</script> 
+  
+ 
+  
+   
+    
+ <body onload="load_dashboard_user()">
+ 
+ 
+ <table style="height:100%;width:100%; position: absolute; top: 0; bottom: 0; left: 0; right: 0;border:none;" cellpadding="0" cellspacing="0" border="0">
+     <tr style="height: 100%;">
+        <td class="left_panel">
+        <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" class="top_dark_panel">
+		<tr>
+		<td align="center"><img src="images/product_logo.jpg"></td>
+		</tr>
+		</table>
+
+<br>
+        <div class="left_menu_panel">
+        
+ 
+ 
+  
+   
+    
+ 
+<!DOCTYPE HTML>
+
+
+
+
+ <head>
+ <script>
+function myFunction(idName) {
+
+	if(idName=="grievance") 
+	{
+	if(document.getElementById('hearing').style.display=="block") document.getElementById('hearing').style.display="none";
+	if(document.getElementById('inspection').style.display=="block") document.getElementById('inspection').style.display="none";
+	if(document.getElementById('document').style.display=="block") document.getElementById('document').style.display="none";
+	if(document.getElementById('reports').style.display=="block") document.getElementById('reports').style.display="none";
+	if(document.getElementById('management').style.display=="block") document.getElementById('management').style.display="none";
+	}
+	if(idName=="inspection") 
+	{
+	if(document.getElementById('hearing').style.display=="block") document.getElementById('hearing').style.display="none";
+	if(document.getElementById('grievance').style.display=="block") document.getElementById('grievance').style.display="none";
+	if(document.getElementById('document').style.display=="block") document.getElementById('document').style.display="none";
+	if(document.getElementById('reports').style.display=="block") document.getElementById('reports').style.display="none";
+	if(document.getElementById('management').style.display=="block") document.getElementById('management').style.display="none";
+	}
+	if(idName=="hearing") 
+	{
+	if(document.getElementById('inspection').style.display=="block") document.getElementById('inspection').style.display="none";
+	if(document.getElementById('grievance').style.display=="block") document.getElementById('grievance').style.display="none";
+	if(document.getElementById('document').style.display=="block") document.getElementById('document').style.display="none";
+	if(document.getElementById('reports').style.display=="block") document.getElementById('reports').style.display="none";
+	if(document.getElementById('management').style.display=="block") document.getElementById('management').style.display="none";
+	}	
+	if(idName=="document") 
+	{
+	if(document.getElementById('hearing').style.display=="block") document.getElementById('hearing').style.display="none";
+	if(document.getElementById('grievance').style.display=="block") document.getElementById('grievance').style.display="none";
+	if(document.getElementById('inspection').style.display=="block") document.getElementById('inspection').style.display="none";
+	if(document.getElementById('reports').style.display=="block") document.getElementById('reports').style.display="none";
+	if(document.getElementById('management').style.display=="block") document.getElementById('management').style.display="none";
+	}
+	if(idName=="reports") 
+	{
+	if(document.getElementById('hearing').style.display=="block") document.getElementById('hearing').style.display="none";
+	if(document.getElementById('grievance').style.display=="block") document.getElementById('grievance').style.display="none";
+	if(document.getElementById('document').style.display=="block") document.getElementById('document').style.display="none";
+	if(document.getElementById('inspection').style.display=="block") document.getElementById('inspection').style.display="none";
+	if(document.getElementById('management').style.display=="block") document.getElementById('management').style.display="none";
+	}
+	if(idName=="management") 
+	{
+	if(document.getElementById('hearing').style.display=="block") document.getElementById('hearing').style.display="none";
+	if(document.getElementById('grievance').style.display=="block") document.getElementById('grievance').style.display="none";
+	if(document.getElementById('document').style.display=="block") document.getElementById('document').style.display="none";
+	if(document.getElementById('reports').style.display=="block") document.getElementById('reports').style.display="none";
+	if(document.getElementById('inspection').style.display=="block") document.getElementById('inspection').style.display="none";
+	}
+  var x = document.getElementById(idName);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+</script>
+ <script>
+ function load_content(module)
+{
+$(document).ready(function(){
+	if(module=="dashboard") {
+	
+	var dept = document.getElementById('department').value;
+	if(dept=="Help Desk")
+	{
+		var url="/IGMS/viewDashboardAgent.do?method=loadHomeDashboardAgent";
+	}
+	if(dept=="Regional Office")
+	{
+		var url="/IGMS/viewDashboardHomeRegion.do?method=loadHomeDashboardRegion";
+	}
+	if(dept=="PG Cell")
+	{
+		var url="/IGMS/viewDashboardHomePgcell.do?method=loadHomeDashboardPgcell";
+	}	
+	if(dept=="PG Cell User")
+	{
+		var url="/IGMS/viewDashboardHomePgcellUser.do?method=loadHomeDashboardPgcellUser";
+	}		
+	if(dept=="Management")
+	{
+		var url="/IGMS/loadDashboard.do?method=loadDashboard";
+	}
+	
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	}
+	if(module=="newcallentry") {
+	var url="/IGMS/complainEntry.do?method=loadEntry";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	}
+	if(module=="editcall")
+	var url="/IGMS/complainEdit.do?method=loadEdit";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="closecall")
+	var url="/IGMS/complainClose.do?method=loadClose";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="opencall")
+	var url="/IGMS/complainOpen.do?method=loadOpen";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="reverse")
+	var url="/IGMS/reverseDocket.do?method=loadReverseDocket";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="actionupload")
+	var url="/IGMS/fileUpload.do?method=loadUpload";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';	
+
+	if(module=="action")
+	var url="/IGMS/actionReport.do?method=loadActionReport";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="archive")
+	var url="/IGMS/complainRegisterArchive.do?method=loadArchive";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="register")
+	var url="/IGMS/complainRegister.do?method=loadRegister";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="calendar")
+	var url="/IGMS/hearingCalendar.do?method=loadCalendarZone";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="dateallotment")
+	var url="/IGMS/hearingScheduleAssign.do?method=loadAssign";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="updatekyc")
+	var url="/IGMS/updateKyc.do?method=loadEdit";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="dateassign")
+	var url="/IGMS/hearingSchedule.do?method=load";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="newinspection")
+	var url="/IGMS/inspectionComplainCreate.do?method=loadComplainInspection";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="routineinspection")
+	var url="/IGMS//inspectionCreate.do?method=loadInspection";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="inspectionedit")
+	var url="/IGMS//inspectionEdit.do?method=loadInspectionEdit";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="inspectionregister")
+	var url="/IGMS//inspectionRegister.do?method=loadInspectionRegister";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';	
+
+	if(module=="newOutboundCallentry")
+	var url="/IGMS/outboundComplainEntry.do?method=loadEntry";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="newFeedbackentry")
+	var url="/IGMS/newFeedback.do?method=loadFeedback";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="feedbackedit")	
+	var url="/IGMS/feedbackEdit.do?method=loadEditFeedback";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="deptcallentry")
+	var url="/IGMS/deptCallEntry.do?method=load";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="deptEnquiry")
+	var url="/IGMS/deptEnquiryEntry.do?method=load";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="document")
+	var url="/IGMS/viewDocumentReprint.do?method=load";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="letter")
+	var url="/IGMS/letterCreate.do?method=loadLetterCreate";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="ld")
+	var url="/IGMS/ldCreate.do?method=loadLdCreate";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="hearingstatus")
+	var url="/IGMS//hearingStatusUpdate.do?method=loadStatus";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="hearingchecklist")
+	var url="/IGMS//hearingChecklist.do?method=loadCalendarZone";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="pendingld")
+	var url="/IGMS/ldPending.do?method=loadPendingLdReport";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="pendinginspection")
+	var url="/IGMS/pendingInspection.do?method=loadPendingInspection";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="pendinghearing")
+	var url="/IGMS/pendingHearing.do?method=loadPendingHearing";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="feedbackreport")
+	var url="/IGMS/feedbackReport.do?method=loadFeedbackReport";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+	
+	if(module=="departmentreport")
+	var url="/IGMS/departmentReport.do?method=loadDepartmentReport";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="datareport")
+	var url="/IGMS/dataReport.do?method=loadDataReport";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';	
+
+	if(module=="escalation")
+	var url="/IGMS/escalationReport.do?method=loadEscalationReport";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+		
+	if(module=="district")
+	var url="/IGMS/districtMap.do?method=loadDistrictMap";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="ageing")
+	var url="/IGMS/ageingReport.do?method=loadAgeingReport";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+	if(module=="hearingregister")
+	var url="/IGMS/hearingRegister.do?method=loadHearingRegister";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';	
+
+	if(module=="activity")
+	var url="/IGMS/activityTracking.do?method=load";
+	document.getElementById('right').innerHTML= '<iframe src="'+url+'" style="width:100%; height:100%; overflow:auto;overflow: hidden; border:none;"></iframe>';
+
+});
+}
+
+
+ </script>
+</head>
+
+<table cellpadding="0" cellspacing="0" border="0" align="center">
+<tr>
+<td style="padding-left:15px;padding-bottom:20px;"><a style="cursor:pointer;" onclick="javascript:history.back()" border="0"><img src="images/icon_back.jpg"></a></td>
+<td style="padding-bottom:20px;"><a style="cursor:pointer;" onclick="load_content('dashboard')" border="0"><img src="images/db_red_button.jpg"></a></td>
+</tr>
+</table>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+<tr>
+<td width="31"><img src="images/icon_grievance.jpg"></td>
+<td><a class="left_menu_main" style="cursor:pointer;" onclick="myFunction('grievance')">Grievance Management</a></td>
+</tr>
+</table>
+<div id="grievance" class="left_menu_sub" style="display:none;">
+<div style="padding:2px;"><a onclick="load_content('newcallentry')" class="left_menu_sub_link">New Complain Entry</a></div>
+<div style="padding:2px;"><a onclick="load_content('editcall')" class="left_menu_sub_link">Edit Complain Docket</a></div>
+<div style="padding:2px;"><a onclick="load_content('closecall')" class="left_menu_sub_link">Close Complain Docket</a></div>
+<div style="padding:2px;"><a onclick="load_content('opencall')" class="left_menu_sub_link">Open Complain Docket</a></div>
+<div style="padding:2px;"><a onclick="load_content('reverse')" class="left_menu_sub_link">Return Assignment to HOD</a></div>
+<div style="padding:2px;"><a onclick="load_content('actionupload')" class="left_menu_sub_link">Action File Upload</a></div>
+<div style="padding:2px;"><a onclick="load_content('archive')" class="left_menu_sub_link">EMIS Archive</a></div>
+</div>
+
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+<tr>
+<td width="31"><img src="images/icon_hearing.jpg"></td>
+<td><a class="left_menu_main" style="cursor:pointer;" onclick="myFunction('hearing')">Hearing Management</a></td>
+</tr>
+</table>
+
+<div id="hearing" class="left_menu_sub" style="display:none;">
+<div style="padding:2px;"><a onclick="load_content('dateassign')" class="left_menu_sub_link">Create Hearing Date</a></div>
+<div style="padding:2px;"><a onclick="load_content('calendar')" class="left_menu_sub_link">Hearing Calendar</a></div>
+<div style="padding:2px;"><a onclick="load_content('hearingchecklist')" class="left_menu_sub_link">Hearing Checklist</a></div>
+<div style="padding:2px;"><a onclick="load_content('dateallotment')" class="left_menu_sub_link">Hearing Docket Allotment</a></div>
+<div style="padding:2px;"><a onclick="load_content('hearingstatus')" class="left_menu_sub_link">Update Hearing Status</a></div>
+<div style="padding:2px;"><a onclick="load_content('updatekyc')" class="left_menu_sub_link">Update KYC</a></div>
+</div>
+
+
+<div id="inspection" class="left_menu_sub" style="display:none;">
+<div style="padding:2px;"><a onclick="load_content('newinspection')" class="left_menu_sub_link">Inspection For Complaint</a></div>
+<div style="padding:2px;"><a onclick="load_content('routineinspection')" class="left_menu_sub_link">Routine Inspection</a></div>
+<div style="padding:2px;"><a onclick="load_content('inspectionedit')" class="left_menu_sub_link">Edit Inspection Report</a></div>
+<!-- <div style="padding:2px;"><a onclick="load_content('inspectionview')" class="left_menu_sub_link">View Inspection Report</a></div> -->
+
+</div>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+<tr>
+<td width="31"><img src="images/icon_letter.jpg"></td>
+<td><a class="left_menu_main" style="cursor:pointer;" onclick="myFunction('document')">Document & Letters</a></td>
+</tr>
+</table>
+<div id="document" class="left_menu_sub" style="display:none;">
+<div style="padding:2px;"><a onclick="load_content('ld')" class="left_menu_sub_link">Issue LD Letter</a></div>
+<div style="padding:2px;"><a onclick="load_content('letter')" class="left_menu_sub_link">Issue Other Letter</a></div>
+<div style="padding:2px;"><a onclick="load_content('document')" class="left_menu_sub_link">View & Print Letter</a></div>
+</div>
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+<tr>
+<td width="31"><img src="images/icon_report.jpg"></td>
+<td><a class="left_menu_main" style="cursor:pointer;" onclick="myFunction('reports')">Reports & Registers</a></td>
+</tr>
+</table>
+<div id="reports" class="left_menu_sub" style="display:none;">
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('register')">Complain Register</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('action')">Action Taken Report</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('inspectionregister')">Inspection Register</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('pendingld')">Pending LD Letter</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('pendinginspection')">Pending Inspection</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link"  onclick="load_content('hearingregister')">Hearing Register</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('pendinghearing')">Pending Hearing</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('feedbackreport')">Feedback Report</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('departmentreport')">Department Report</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('datareport')">PG Cell Data Report</a></div>
+
+</div>
+
+
+<div id="management" class="left_menu_sub" style="display:none;">
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('escalation')">Escalation Report</a></div>
+<!-- 
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('district')">District wise Breakup</a></div>
+-->
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('ageing')">Overdue Ageing Analysis</a></div>
+<div style="padding:2px;"><a class="left_menu_sub_link" onclick="load_content('activity')">Team Activity</a></div> 
+
+
+</div>
+
+
+<input type="hidden" id="department" value="PG Cell User" >
+ 
+        
+        
+        </div>
+        </td>
+        <td class="right_panel">
+        <div id="right" class="right_panel_div">    
+        </div>
+        </td>
+    </tr>
+</table>
+</body>
+
+

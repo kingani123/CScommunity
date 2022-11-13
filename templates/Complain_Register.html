@@ -1,0 +1,578 @@
+
+
+
+					<!DOCTYPE html>
+					<html>
+						<head>
+							<!-- Basic Page Info -->
+							<meta charset="utf-8" />
+							<title>IGMS</title>
+					
+							<!-- Site favicon -->
+							<link
+								rel="apple-touch-icon"
+								sizes="180x180"
+								href="vendors/images/apple-touch-icon.png"
+							/>
+							<link
+								rel="icon"
+								type="image/png"
+								sizes="32x32"
+								href="vendors/images/favicon-32x32.png"
+							/>
+							<link
+								rel="icon"
+								type="image/png"
+								sizes="16x16"
+								href="vendors/images/favicon-16x16.png"
+							/>
+					
+							<!-- Mobile Specific Metas -->
+							<meta
+								name="viewport"
+								content="width=device-width, initial-scale=1, maximum-scale=1"
+							/>
+					
+							<!-- Google Font -->
+							<link
+								href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+								rel="stylesheet"
+							/>
+							<!-- CSS -->
+							<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
+							<link
+								rel="stylesheet"
+								type="text/css"
+								href="vendors/styles/icon-font.min.css"
+							/>
+							<link
+								rel="stylesheet"
+								type="text/css"
+								href="src/plugins/datatables/css/dataTables.bootstrap4.min.css"
+							/>
+							<link
+								rel="stylesheet"
+								type="text/css"
+								href="src/plugins/datatables/css/responsive.bootstrap4.min.css"
+							/>
+							<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+					
+							<!-- Global site tag (gtag.js) - Google Analytics -->
+							<script
+								async
+								src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+							></script>
+							<script>
+								window.dataLayer = window.dataLayer || [];
+								function gtag() {
+									dataLayer.push(arguments);
+								}
+								gtag("js", new Date());
+					
+								gtag("config", "G-GBZ3SGGX85");
+							</script>
+							<!-- Google Tag Manager -->
+							<script>
+								(function (w, d, s, l, i) {
+									w[l] = w[l] || [];
+									w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+									var f = d.getElementsByTagName(s)[0],
+										j = d.createElement(s),
+										dl = l != "dataLayer" ? "&l=" + l : "";
+									j.async = true;
+									j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+									f.parentNode.insertBefore(j, f);
+								})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+							</script>
+							<!-- End Google Tag Manager -->
+						</head>
+						<body>
+							
+					
+							<div class="header">
+								<div class="header-left">
+									<div class="menu-icon bi bi-list"></div>
+									<div
+										class="search-toggle-icon bi bi-search"
+										data-toggle="header_search"
+									></div>
+									<div class="header-search">
+										<form>
+											<div class="form-group mb-0">
+												<i class="dw dw-search2 search-icon"></i>
+												<input
+													type="text"
+													class="form-control search-input"
+													placeholder="Search Here"
+												/>
+												<div class="dropdown">
+													<a
+														class="dropdown-toggle no-arrow"
+														href="#"
+														role="button"
+														data-toggle="dropdown"
+													>
+														<i class="ion-arrow-down-c"></i>
+													</a>
+													<div class="dropdown-menu dropdown-menu-right">
+														<div class="form-group row">
+															<label class="col-sm-10 col-md-2 col-form-label"
+																>From</label
+															>
+															<div class="col-sm-12 col-md-10">
+																<input
+																	class="form-control form-control-sm form-control-line"
+																	type="text"
+																/>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-12 col-md-2 col-form-label">To</label>
+															<div class="col-sm-12 col-md-10">
+																<input
+																	class="form-control form-control-sm form-control-line"
+																	type="text"
+																/>
+															</div>
+														</div>
+														<div class="form-group row">
+															<label class="col-sm-12 col-md-2 col-form-label"
+																>Subject</label
+															>
+															<div class="col-sm-12 col-md-10">
+																<input
+																	class="form-control form-control-sm form-control-line"
+																	type="text"
+																/>
+															</div>
+														</div>
+														
+														<div class="text-right">
+															<button class="btn btn-primary">Search</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+					
+						
+								
+									<div class="user-info-dropdown">
+										<div class="dropdown">
+											<a
+												class="dropdown-toggle"
+												href="#"
+												role="button"
+												
+											>
+												<span class="user-icon">
+													<img src="vendors/images/user2.png" alt="" />
+												</span>
+												
+												<span class="user-name "><b>@ User-name<b><br>
+													
+													<p class="small">(Data Entry Oparetor)</p></span>
+													
+											</a>
+											
+					
+											
+										</div>
+										
+									</div>
+									
+									<div class="logout">
+									<a href="#" class="btn btn-danger btn-lg">
+										
+										<span class="glyphicon glyphicon-log-out"></span> Log out
+										<i class="bi bi-box-arrow-right"></i>
+									  </a>
+									  
+									</div>
+							
+									</div>
+								</div>
+							</div>
+					
+							<div class="left-side-bar">
+								<div class="brand-logo">
+									
+									
+									<a href="index11.html">
+										
+										<img
+											src="vendors/images/a.svg"
+											alt=""
+											
+										/>
+									</a>
+					
+							
+									<div class="close-sidebar" data-toggle="left-sidebar-close">
+										
+									</div>
+								</div>
+								<div class="menu-block customscroll">
+									<div class="sidebar-menu">
+										<ul id="accordion-menu">
+											<div class="text-center">
+					
+												<a href="index11.html" class="">
+												
+													<button type="button" class="mt-1 bi bi-grid  btn-danger btn-lg btn-block ">Dashboard</button><br>
+												</a>
+												<br>
+											</div>
+											<div class="text-left">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle">
+														<span  class="micon  bi-headset"></span
+														><span class="mtext">Grievance Management</span>
+													</a>
+													<ul class="submenu">
+						
+						
+														<li><a href="newcomplain.html">New Complainant Entry</a></li>
+														<li><a href="outbound.html">Outbound Call Entry</a></li>
+														
+														   
+														<li><a href="#">Return Assignment to HOD</a></li>
+														<li><a href="#">Action File Upload</a></li>
+														<li><a href="#">EMIS Archive</a></li>
+														<li><a href="#">Helpline Call</a></li>
+														<li><a href="outbound.html">OutBound Call</a></li>
+														<li class="dropdown">
+															<a href="#" class="dropdown-toggle">
+																<span  class="micon  bi-pencil-square"></span
+																><span class="mtext">Edit</span>
+															</a>
+														  
+														<ul class="submenu">
+													<li><a href="close.html">Close Complain Docket</a></li>
+													<li><a href="open.html">Open Complain Docket</a></li>
+											  </ul>
+												</li>
+													</ul>
+												</li>
+											</div>
+										<div class="text-left">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle">
+														<span class="micon bi bi-hammer"></span
+														><span class="mtext">Hearing Management</span>
+													</a>
+													<ul class="submenu">
+											<li><a href="create_hearing.html">Create Hearing Date</a></li>
+														<li><a href="hearing_calander.html">Hearing Calendar</a></li>
+														<li><a href="hearing_cheaklist.html">	Hearing Checklist</a></li>
+														<li><a href="Hearing_Docket_Allotment.html">Hearing Docket Allotment</a></li>
+														<li><a href="hearing_status.html">Update Hearing Status</a></li>
+														<li><a href="#">Update KYC</a></li>
+													</ul>
+												</li>
+											
+											</div>
+								
+											<div class="text-left">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle">
+														<span class="micon bi bi-envelope"></span
+														><span class="mtext"> Document & Letters</span>
+													</a>
+													<ul class="submenu">
+														
+														
+														
+						
+													
+												
+														<li><a href="issueld letter.html">Issue LD Letter</a></li>
+														<li><a href="issueotherletter.html">Issue Other Letter</a></li>
+														<li><a href="view&print.html">View & Print Letter</a></li>
+														
+														
+													</ul>
+												</li>
+											</div>
+						
+											<div class="text-left">
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle">
+														<span class="micon bi bi-file-text"></span
+														><span class="mtext"> Reports & Registers</span>
+													</a>
+							
+													<ul class="submenu">
+														<li><a href="Complain_Register.html">Complain Register</a></li>
+														<li><a href="Action_Taken_Report.html">Action Taken Report</a></li>
+														<li><a href="Inspection_Register.html">Inspection Register</a></li>
+														<li><a href="#">Pending LD Letter</a></li>
+														<li><a href="Pending_Inspection.html">Pending Inspection</a></li>
+														<li><a href="Hearing_Register.html">Hearing Register</a></li>
+														<li><a href="pendinghearing.html">Pending Hearing</a></li>
+														<li><a href="feedbackreport.html">Feedback Report</a></li>
+														<li><a href="#">Department Report</a></li>
+														<li><a href="pgcelldatareport.html">PG Cell Data Report</a></li>
+														
+														<li>     </li>
+													
+													</ul>
+												</li>
+											</div>
+											
+													
+													</ul>
+												</li>
+											</div>
+										</div>
+									</div>
+								</div>
+							<div class="mobile-menu-overlay"></div>
+
+							<div class="main-container">
+								<div class="pd-ltr-20 xs-pd-20-10">
+									<div class="min-height-200px">
+										<div class="page-header">
+											<div class="row">
+												<div class="col-md-6 col-sm-12">
+													<div class="title">
+														<h4>Periodical Complaint Register</h4>
+													</div>
+													
+												</div>
+												<div class="col-md-6 col-sm-12 text-right">
+												
+												</div>
+											</div>
+										</div>
+					
+										<div class="pd-20 card-box mb-30">
+											<div class="clearfix">
+												<h4 class="text-blue h4">
+													Provide Report Options</h4>
+												
+											</div>
+											<div class="wizard-content">
+												<form class="tab-wizard wizard-circle wizard">
+												
+													<section>
+														
+														<div class="row">
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>From Date</label>
+																	<input type="text" class="form-control date-picker" />
+																
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>To Date</label>
+																	<input type="text" class="form-control date-picker" />
+																</div>
+															</div>
+														</div>
+														
+														<div class="row">
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>Call Type</label>
+																	<select class="custom-select form-control">
+																		<option value="">All</option>
+																		<option value="">complain and Grievance</option>
+																		<option value="">LD</option>
+																		<option value="">General Query</option>
+																	</select>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>Case Status</label>
+																	<select class="custom-select form-control">
+																		<option value="">All</option>
+																		<option value="">Opened</option>
+																		<option value="">Closed</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														<div class="row">
+														
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>Call Source</label>
+																	<select class="custom-select form-control">
+																		<option value="">Help Desk Call</option>
+																		<option value="">Email</option>
+																		<option value="">Paribesh App</option>
+																		<option value="">Letter By Post</option>
+																		<option value="">Grievance Form</option>
+																		<option value="">Social Network</option>
+																	</select>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>Complain Through</label>
+																	<select class="custom-select form-control">
+																		<option value="">All</option>
+																		<option value="">General</option>
+																		<option value="">CMO</option>
+																		<option value="">Dept of Environment</option>
+																		<option value="">Government Office</option>
+																		<option value="">Primr minister Office</option>
+																		<option value="">Member Secretary</option>
+																		<option value="">Chairman</option>
+																		<option value="">Chief Engineer- Planning & WMC</option>
+																		<option value="">Chief Engineer - O & E</option>
+																		<option value="">KMC Office</option>
+																		<option value="">MLA</option>
+																		<option value="">MP</option>
+																		<option value="">Councillor</option>
+																		<option value="">DM Office</option>
+																		<option value="">BDO Office</option>
+																		<option value="">BLRO Office</option>
+																		<option value="">DLRO Office</option>
+																		<option value="">CPCB</option>
+																		<option value="">Sr. Law Officer</option>
+																	
+																
+																	</select>
+																</div>
+															</div>
+														</div>
+													</section>
+													<!-- Step 2 -->
+													
+													<section>
+														<div class="row">
+															<div class="form-group">
+																<label>Pollution Category</label>
+																
+																<select class="custom-select form-control">
+																	<option value="">Air Pollution</option>
+																	<option value="">Ari and Noise Pollution</option>
+																	<option value="">Air and Water Pollution</option>
+																	<option value="">Water Pollution</option>
+																	<option value="">Waste Pollution</option>
+																	<option value="">VISible Vehicular Pollution</option>
+																	<option value="">Traffic Pollution</option>
+																	<option value="">Industrial Pollution</option>
+																	<option value="">Open/Garbage Pollution</option>
+																	<option value="">Construction/Demolition Action</option>
+																	<option value="">Leaf Burning</option>
+																	<option value="">Rode Duse</option>
+																	<option value="">Unpaved Road/pit</option>
+																	<option value="">fire in Landfill sites</option>
+																	<option value="">Generator</option>
+																	<option value="">Pollution From illegal industry</option>
+																	<option value="">Open Dumping of Garbage</option>
+																	<option value="">Industrial Waste Dumping</option>
+																	<option value="">Pond Filling</option>
+																	<option value="">Other</option>
+																	<option value="">Poultry</option>
+																	<option value="">Ceremony hall</option>
+																	<option value="">Mobile Tower</option>
+																	<option value="">Loudspeaker/Dj Box</option>
+																	<option value="">Tree Cutting</option>
+																	<option value="">Stagnant Water</option>
+																	<option value="">Firecraker Sound Pollution/option>
+																	<option value="">Smell</option>
+																	<option value="">Noise Pollution</option>
+																</select>
+															</div>
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label>Recorded By Department</label>
+																	
+																	<select class="custom-select form-control">
+																		<option value="">PG Cell Department</option>
+																		<option value="">Help Desk Department</option>
+																		<option value="">All Department</option>
+																	</select>
+																</div>
+															</div>
+														 
+														</div>
+														</section>
+													
+													<!-- Step 3 -->
+													
+													
+												</form>
+											</div>
+										</div>
+					
+										
+										
+											<div class="modal-footer justify-content-right">
+												<button
+													type="button"
+													class="btn btn-success"
+													data-dismiss="modal"
+												>
+													Submit
+												</button>
+											</div>
+										</div>
+							
+									<!-- Export Datatable End -->
+						
+						<!-- welcome modal start -->
+						
+							
+							
+							
+							<!-- welcome modal end -->
+							<!-- js -->
+							<script src="vendors/scripts/core.js"></script>
+							<script src="vendors/scripts/script.min.js"></script>
+							<script src="vendors/scripts/process.js"></script>
+							<script src="vendors/scripts/layout-settings.js"></script>
+							<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
+							<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+							<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+							<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+							<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+							<script src="vendors/scripts/dashboard3.js"></script>
+							<!-- Google Tag Manager (noscript) -->
+							<noscript
+								><iframe
+									src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
+									height="0"
+									width="0"
+									style="display: none; visibility: hidden"
+								></iframe
+							></noscript>
+							<style>
+								.header{
+									background-color: #0A3C3F;
+								}
+								.menu-block{
+									background-color:#0A3C3F;
+								}
+								.brand-logo{
+									background-color:#0A3C3F;
+								}
+								.button{
+									text-align:center;
+								}
+								.xs-pd-20-10{
+									background-color:#afd7fa;
+								}
+								.b{
+									color:red;
+								}
+								.sidebar-menu .submenu li a {
+									display: block;
+									padding: 1px 15px 14px 60px;
+									font-size: 14px;
+									
+								}
+							</style>
+							<!-- End Google Tag Manager (noscript) -->
+						</body>
+					</html>
+					

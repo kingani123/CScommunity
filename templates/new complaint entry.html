@@ -1,0 +1,678 @@
+<html><head>
+    <title>IGMS - Grievance Management</title>
+    <meta name="Generator" content="EditPlus">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <link rel="shortcut icon" type="image/png" href="images/igms.png">
+    <link rel="stylesheet" href="css/appstyle.css">
+    <link rel="stylesheet" href="css/dropdownstyle.css">
+    <link rel="stylesheet" href="css/pagestyle.css">
+     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>	
+     <script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
+        
+      <script type="text/javascript" src="js/jquery-ui.js"></script>	
+  <script type="text/javascript" src="js/dropdown.js"></script>
+  <script type="text/javascript" src="js/po.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="css/datepickr.css">
+  
+     
+     <script>
+      $(function(){
+          $(":text").attr("autocomplete", "off");
+      });
+     </script>
+     
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap" rel="stylesheet">
+    <script>
+    function go_dashboard()
+      {
+      document.location.href="/IGMS/loadDashboard.do?method=loadDashboard";
+      }
+    </script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script><script type="text/javascript" src="js/dropdown.js"></script></head>
+  
+  
+        
+   
+   <body><table width="100%" cellpadding="0" cellspacing="0" border="0">
+   <tbody><tr>
+   <td class="top_panel">
+  
+  
+  
+  
+  
+  
+  
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="top_grey_panel">
+  <tbody><tr>
+  <td>
+      <table cellpadding="0" cellspacing="0" border="0">
+      <tbody><tr>
+      <td class="search_txt"></td>
+      <td></td>
+      <td width="50"></td>
+      </tr>
+      </tbody></table>
+  
+  </td>
+  <td align="right">
+       <table cellpadding="0" cellspacing="0" border="0">
+       <tbody><tr>
+           <td class="top_item1">&nbsp;</td>
+           <td class="top_icon"><img src="images/icon_top_user.jpg"></td>
+          <td class="top_item">Sanjoy Sarkar</td>
+          <td class="top_item">(PG Cell User)</td>
+          <td class="top_icon"><img src="images/icon_top_location.jpg"></td>
+          <td class="top_item2">Head Office</td>
+          <td class="top_item3"><a href="/IGMS/logout.do" target="_parent"><img src="images/top_signout.jpg"></a></td>
+          <td class="top_item3"><a href="/IGMS/searchKeyword.do?method=searchKeyword"><img src="images/icon_top_faq.jpg"></a></td>
+       </tr>
+       </tbody></table>
+  </td>
+  </tr>	 
+  </tbody></table>
+  
+    </td>
+   </tr>
+   </tbody></table>
+  <script>
+  function show_data()
+  {
+      alert("adada");
+  }
+  function copy_address()
+  {
+      var selection = document.getElementById('same').checked;
+      if(selection==true)
+      {
+          
+          document.getElementById('againstps').value=document.getElementById('callerps').value;
+          document.getElementById('againstmunicipality').value=document.getElementById('callermunicipality').value;
+          document.getElementById('againstpanchayat').value=document.getElementById('callerpanchayat').value;
+          document.getElementById('againsttown').value=document.getElementById('callertown').value;
+          document.getElementById('againstroad').value=document.getElementById('callerroad').value;
+          document.getElementById('againstpo').value=document.getElementById('callerpo').value;
+          document.getElementById('againstpin').value=document.getElementById('callerpin').value;
+          var ddl = document.getElementById("againstdistrict");
+          var option = document.createElement("OPTION");
+          option.innerHTML = document.getElementById("callerdistrict").value;
+          option.value = document.getElementById("callerdistrict").value;
+          ddl.options.add(option);
+          document.getElementById("againstdistrict").selectedIndex="25";
+     
+      } else
+      {
+          document.getElementById('againstps').value="";
+          document.getElementById('againstmunicipality').value="";
+          document.getElementById('againstpanchayat').value="";
+          document.getElementById('againsttown').value="";
+          document.getElementById('againstroad').value="";
+          document.getElementById('againstpo').value="";
+          document.getElementById('againstpin').value="";
+      }
+  }
+  function validate()
+  {
+      if(document.getElementById('callerphone').value=="")
+      {
+          alert("Provide phone no. of the caller");
+          document.getElementById('callerphone').focus();
+          return false;
+      }
+      if(document.getElementById('callername').value=="")
+      {
+          alert("Provide name of the complainant");
+          document.getElementById('callername').focus();
+          return false;		
+      }	
+      if(document.getElementById('callertype').value=="#")
+      {
+          alert("Provide nature/category of the complainant");
+          document.getElementById('callertype').focus();
+          return false;		
+      }		
+      if(document.getElementById('callcategory').value=="#")
+      {
+          alert("Provide category of the complainant");
+          document.getElementById('callcategory').focus();
+          return false;		
+      }		
+      
+      if(document.getElementById('callerdistrict').value=="#")
+      {
+          alert("Provide district of the complainant");
+          document.getElementById('callerdistrict').focus();
+          return false;		
+      }
+      if(document.getElementById('calltype').value=="#")
+      {
+          alert("Please select complain type");
+          document.getElementById('calltype').focus();
+          return false;		
+      }	
+      if(document.getElementById('calltype').value=="Complain")
+      {	
+      if(document.getElementById('callerps').value=="")
+      {
+          alert("Provide police station of the complainant");
+          document.getElementById('callerps').focus();
+          return false;		
+      }	
+      if(document.getElementById('callermunicipality').value=="")
+      {
+          alert("Provide municipality of the complainant");
+          document.getElementById('callermunicipality').focus();
+          return false;		
+      }	
+      if(document.getElementById('callerpanchayat').value=="")
+      {
+          alert("Provide panchayat of the complainant");
+          document.getElementById('callerpanchayat').focus();
+          return false;		
+      }		
+      if(document.getElementById('callertown').value=="")
+      {
+          alert("Provide village/town of the complainant");
+          document.getElementById('callertown').focus();
+          return false;		
+      }	
+      if(document.getElementById('callerroad').value=="")
+      {
+          alert("Provide premises no/ road name of the complainant");
+          document.getElementById('callerroad').focus();
+          return false;		
+      }			
+      if(document.getElementById('callerpanchayat').value=="")
+      {
+          alert("Provide premises no./road name of the complainant");
+          document.getElementById('callerroad').focus();
+          return false;		
+      }	
+      if(document.getElementById('callerpo').value=="")
+      {
+          alert("Provide post office of the complainant");
+          document.getElementById('callerpo').focus();
+          return false;		
+      }	
+      if(document.getElementById('callerpin').value=="")
+      {
+          alert("Provide pin no. of the complainant");
+          document.getElementById('callerpin').focus();
+          return false;		
+      }	
+      
+      
+          if(document.getElementById('againstname').value=="")
+          {
+              alert("Provide name of the organization complained against");
+              document.getElementById('againstname').focus();
+              return false;		
+          }	
+          if(document.getElementById('againsttype').value=="#")
+          {
+              alert("Provide type of complain against");
+              document.getElementById('againsttype').focus();
+              return false;		
+          }		
+          if(document.getElementById('againstdistrict').value=="#")
+          {
+              alert("Provide district of the complain against");
+              document.getElementById('againstdistrict').focus();
+              return false;		
+          }
+          if(document.getElementById('againstps').value=="")
+          {
+              alert("Provide police station of the complain against");
+              document.getElementById('againstps').focus();
+              return false;		
+          }	
+          if(document.getElementById('againstmunicipality').value=="")
+          {
+              alert("Provide municipality of the complain against");
+              document.getElementById('againstmunicipality').focus();
+              return false;		
+          }	
+          if(document.getElementById('againstpanchayat').value=="")
+          {
+              alert("Provide panchayat of the complain against");
+              document.getElementById('againstpanchayat').focus();
+              return false;		
+          }		
+          if(document.getElementById('againsttown').value=="")
+          {
+              alert("Provide village/town of the complain against");
+              document.getElementById('againsttown').focus();
+              return false;		
+          }	
+          if(document.getElementById('againstroad').value=="")
+          {
+              alert("Provide premises no/road name of the complain against");
+              document.getElementById('calletown').focus();
+              return false;		
+          }			
+          if(document.getElementById('againstpanchayat').value=="")
+          {
+              alert("Provide panchayat of the complain against");
+              document.getElementById('againstroad').focus();
+              return false;		
+          }	
+          if(document.getElementById('againstpo').value=="")
+          {
+              alert("Provide post office of the complain against");
+              document.getElementById('againstpo').focus();
+              return false;		
+          }	
+          if(document.getElementById('againstpin').value=="")
+          {
+              alert("Provide pin no. of the complain against");
+              document.getElementById('againstpin').focus();
+              return false;		
+          }	
+          
+          if(document.getElementById('complaincategory').value=="#")
+          {
+              alert("Provide pollution category of the complaint");
+              document.getElementById('complaincategory').focus();
+              return false;		
+          }
+      }
+      if(document.getElementById('callsource').value=="#")
+      {
+          alert("Provide source of the complaint");
+          document.getElementById('callsource').focus();
+          return false;		
+      }	
+      if(document.getElementById('assignedoffice').value=="#")
+      {
+          alert("Provide regional office assigned for this complaint");
+          document.getElementById('assignedoffice').focus();
+          return false;		
+      }	
+  
+      if(document.getElementById('complaindesc').value=="")
+      {
+          alert("Provide detailed description for this complaint");
+          document.getElementById('complaindesc').focus();
+          return false;		
+      }		
+      return confirm("Do you want to save this complaint ?");
+  }
+  function save_form(form)
+  {
+      form.method.value="saveComplain";
+      if(validate()) form.submit();
+  
+  }
+  function load_form(form)
+  {
+      if(form.caseId.value!="#") 
+      {
+          form.method.value="loadComplainDetailForEdit";
+          form.submit();
+      }
+  }
+  function getDocketNo(form)
+  {
+      if(form.isOld.value=="Y") 
+      {
+          form.method.value="loadDocketNo";
+          form.submit();
+      }
+  }
+  
+  function show_search_popup()
+  {
+      if(document.getElementById('callcategory').value=="Y") 
+      {
+          var url="/IGMS/existingSearch.do?method=loadExistingSearch";
+          document.getElementById('overlay').style.display="block";
+          document.getElementById('pop_search').style.display="block";
+          document.getElementById("pop_search").innerHTML='<object height="700px" width="900px" data='+url+'></object>';
+      } else {
+          alert("Select Repeat Complain from Nature of Complain");
+      }
+  }
+  function reload_existing(form)
+  {
+      form.method.value="reloadDocketForExisisting";
+      form.submit();
+  }
+  
+  </script>
+  
+  
+  <form name="complainForm" method="post" action="/IGMS/complainEntry.do" id="complainform"><input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="ce6948d8687617c4f466a24675f37b6d">
+  <input type="hidden" name="method" value="loadEntry">
+  
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tbody><tr>
+  <td class="main_container">
+  <!-- content start -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tbody><tr>
+  <td class="module_header">New Complaint Entry
+  </td>
+  <td class="msg_txt">
+  </td>
+  </tr>
+  </tbody></table>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="form_table">
+  <tbody><tr>
+  <td colspan="4" class="form_header">Primary Information (* marked data are mandatory)</td>
+  </tr>
+  <tr>
+  <td class="form_txt">Phone No. *</td>
+  <td class="form_txt">
+  <input type="hidden" name="callingType" value="Inbound">
+  <input type="text" name="callerPhone" value="" class="entry" id="callerphone" autocomplete="off"></td>
+  <td class="form_txt">Nature of Complain</td>
+  <td class="form_txt">
+  <select name="isOld" class="select" id="callcategory"><option value="N">New Complain</option>
+  <option value="Y">Repeat Complain</option></select>
+  </td>
+  </tr>
+  <tr>
+  <td class="form_txt">Repeat Complain Docket No.</td>
+  <td class="form_txt">
+  <table cellpadding="0" cellspacing="0">
+  <tbody><tr>
+  <td>
+  <input type="text" name="docketNo" value="" readonly="readonly" class="entry" id="docketno" autocomplete="off">
+  </td>
+  <td>
+  &nbsp;<a onclick="show_search_popup()"><img src="images/magni_small.jpg"></a>
+  </td>
+  </tr>
+  </tbody></table>
+  
+  <input type="hidden" name="caseId" value="" id="caseid">
+  </td>
+  <td class="form_txt">Email Id</td>
+  <td class="form_txt"><input type="text" name="callerEmail" value="" class="entry" id="calleremail" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Name of The Complainant *</td>
+  <td class="form_txt"><input type="text" name="callerName" value="" class="entry" id="callername" autocomplete="off"></td>
+  <td class="form_txt">Complain Type *</td>
+  <td class="form_txt">
+  <select name="callType" class="select" id="calltype"><option value="#">Select</option>
+  <option value="Complain">Complain and Grievance</option>
+  <option value="Query">General Query</option></select>
+  </td>
+  </tr>
+  <tr>
+  <td class="form_txt">Age of The Complainant</td>
+  <td class="form_txt"><input type="text" name="callerAge" value="" class="entry" id="callerage" autocomplete="off"></td>
+  <td class="form_txt">Occupation</td>
+  <td class="form_txt"><input type="text" name="callerOccupation" value="" class="entry" id="calleroccupation" autocomplete="off">
+  </td>
+  </tr>
+  <tr>
+  <td class="form_txt">Complainant Category *</td>
+  <td class="form_txt">
+  <select name="callerType" class="select" id="callertype"><option value="#">Select</option>
+  <option value="Individual">Individual</option>
+  <option value="Organization">Organization</option>
+  <option value="Mass Petetion">Mass Petetion</option>
+  <option value="Others">Others</option></select>
+  </td>
+  <td class="form_txt">Complain Through *</td>
+  <td class="form_txt">
+  <select name="complainThrough" class="select" id="callthrough"><option value="General">General</option>
+  <option value="CMO">CMO</option>
+  <option value="Department of Environment">Department of Environment</option>
+  <option value="Government Office">Government Office</option>
+  <option value="Prime Minister Office">Prime Minister Office</option>
+  <option value="Member Secretary">Member Secretary</option>
+  <option value="Chairman">Chairman</option>
+  <option value="Chief Engineer - Planning &amp; WMC">Chief Engineer - Planning &amp; WMC</option>
+  <option value="Chief Engineer - O &amp; E">Chief Engineer - O &amp; E</option>
+  <option value="KMC Office">KMC Office</option>
+  <option value="MLA">MLA</option>
+  <option value="MP">MP</option>
+  <option value="Councillor">Councillor</option>
+  <option value="DM Office">DM Office</option>
+  <option value="BDO Office">BDO Office</option>
+  <option value="BLRO Office">BLRO Office</option>
+  <option value="DLRO Office">DLRO Office</option>
+  <option value="CPCB">CPCB</option>
+  <option value="Sr.Law Officer">Sr.Law Officer</option></select>
+  </td>
+  </tr>
+  <tr>
+  <td colspan="4" class="form_header">Address of The Complainant (* marked data are mandatory)</td>
+  </tr>
+  <tr>
+  <td class="form_txt">District</td>
+  <td class="form_txt">
+  <select name="callerDistrict" class="select" id="callerdistrict"><option value="#">Select</option>
+  <option value="Alipurduar">Alipurduar</option>
+  <option value="Bankura">Bankura</option>
+  <option value="Birbhum">Birbhum</option>
+  <option value="Cooch Behar">Cooch Behar</option>
+  <option value="Darjeeling">Darjeeling</option>
+  <option value="Purba Burdwan">Purba Burdwan</option>
+  <option value="Purba Medinipur">Purba Medinipur</option>
+  <option value="Hooghly">Hooghly</option>
+  <option value="Howrah">Howrah</option>
+  <option value="Jalpaiguri">Jalpaiguri</option>
+  <option value="Jhargram">Jhargram</option>
+  <option value="Kalimpong">Kalimpong</option>
+  <option value="Kolkata">Kolkata</option>
+  <option value="Malda">Malda</option>
+  <option value="Murshidabad">Murshidabad</option>
+  <option value="Nadia">Nadia</option>
+  <option value="North 24 Parganas">North 24 Parganas</option>
+  <option value="North Dinajpur">North Dinajpur</option>
+  <option value="Purulia">Purulia</option>
+  <option value="South 24 Parganas">South 24 Parganas</option>
+  <option value="South Dinajpur">South Dinajpur</option>
+  <option value="Paschim Burdwan">Paschim Burdwan</option>
+  <option value="Paschim Medinipur">Paschim Medinipur</option>
+  <option value="Other State">Other State</option></select>
+  </td>
+  <td class="form_txt">Police Station *</td>
+  <td class="form_txt"><input type="text" name="callerPs" value="" class="entry" id="callerps" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Municipality *</td>
+  <td class="form_txt"><input type="text" name="callerMunicipality" value="" class="entry" id="callermunicipality" autocomplete="off"></td>
+  <td class="form_txt">Panchayat *</td>
+  <td class="form_txt"><input type="text" name="callerPanchayat" value="" class="entry" id="callerpanchayat" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Village/Town *</td>
+  <td class="form_txt"><input type="text" name="callerTown" value="" class="entry" id="callertown" autocomplete="off"></td>
+  <td class="form_txt">Premises No/ Name of Road *</td>
+  <td class="form_txt"><input type="text" name="callerRoad" value="" class="entry" id="callerroad" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Post Office *</td>
+  <td class="form_txt"><input type="text" name="callerPo" value="" class="entry" id="callerpo" autocomplete="off"></td>
+  <td class="form_txt">Pin Code *</td>
+  <td class="form_txt"><input type="text" name="callerPin" value="" class="entry" id="callerpin" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td colspan="4" class="form_header">
+  <table cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+  <td>Name &amp; Address Complained Against (* marked data are mandatory)</td>
+  <td align="right">Same location as complainant <input type="checkbox" id="same" onclick="copy_address()">&nbsp;&nbsp;</td>
+  </tr>
+  </tbody></table>
+  
+  </td>
+  </tr>
+  <tr>
+  <td class="form_txt">Name</td>
+  <td class="form_txt"><input type="text" name="againstName" value="" onclick="bindAutoComplete()" class="entry" id="againstname" autocomplete="off"></td>
+  <td class="form_txt">Type</td>
+  <td class="form_txt">
+  <select name="againstType" class="select" id="againsttype"><option value="#">Select</option>
+  <option value="Individual">Individual</option>
+  <option value="Organization">Organization/Industry</option>
+  <option value="Mass Petition">Mass Petition</option>
+  <option value="Others">Others</option></select>
+  </td>
+  </tr>
+  <tr>
+  <td class="form_txt">District *</td>
+  <td class="form_txt">
+  <select name="againstDistrict" class="select" id="againstdistrict"><option value="#">Select</option>
+  <option value="Alipurduar">Alipurduar</option>
+  <option value="Bankura">Bankura</option>
+  <option value="Birbhum">Birbhum</option>
+  <option value="Cooch Behar">Cooch Behar</option>
+  <option value="Darjeeling">Darjeeling</option>
+  <option value="Purba Burdwan">Purba Burdwan</option>
+  <option value="Purba Medinipur">Purba Medinipur</option>
+  <option value="Hooghly">Hooghly</option>
+  <option value="Howrah">Howrah</option>
+  <option value="Jalpaiguri">Jalpaiguri</option>
+  <option value="Jhargram">Jhargram</option>
+  <option value="Kalimpong">Kalimpong</option>
+  <option value="Kolkata">Kolkata</option>
+  <option value="Malda">Malda</option>
+  <option value="Murshidabad">Murshidabad</option>
+  <option value="Nadia">Nadia</option>
+  <option value="North 24 Parganas">North 24 Parganas</option>
+  <option value="North Dinajpur">North Dinajpur</option>
+  <option value="Purulia">Purulia</option>
+  <option value="South 24 Parganas">South 24 Parganas</option>
+  <option value="South Dinajpur">South Dinajpur</option>
+  <option value="Paschim Burdwan">Paschim Burdwan</option>
+  <option value="Paschim Medinipur">Paschim Medinipur</option>
+  <option value="Other State">Other State</option></select>
+  </td>
+  <td class="form_txt">Police Station *</td>
+  <td class="form_txt"><input type="text" name="againstPs" value="" class="entry" id="againstps" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Municipality *</td>
+  <td class="form_txt"><input type="text" name="againstMunicipality" value="" class="entry" id="againstmunicipality" autocomplete="off"></td>
+  <td class="form_txt">Panchayat</td>
+  <td class="form_txt"><input type="text" name="againstPanchayat" value="" class="entry" id="againstpanchayat" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Village/Town *</td>
+  <td class="form_txt"><input type="text" name="againstTown" value="" class="entry" id="againsttown" autocomplete="off"></td>
+  <td class="form_txt">Premises No/ Name of Road *</td>
+  <td class="form_txt"><input type="text" name="againstRoad" value="" class="entry" id="againstroad" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Post Office *</td>
+  <td class="form_txt"><input type="text" name="againstPo" value="" class="entry" id="againstpo" autocomplete="off"></td>
+  <td class="form_txt">Pin Code *</td>
+  <td class="form_txt"><input type="text" name="againstPin" value="" class="entry" id="againstpin" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td colspan="4" class="form_header">Other Information (* marked data are mandatory)</td>
+  </tr>
+  <tr>
+  <td class="form_txt">Pollution Category * </td>
+  <td class="form_txt">
+  <select name="complainCategory" class="select" id="complaincategory"><option value="#">Select</option>
+  <option value="Air Pollution">Air Pollution</option>
+  <option value="Air and Noise Pollution">Air and Noise Pollution</option>
+  <option value="Air and Water Pollution">Air and Water Pollution</option>
+  <option value="Water Pollution">Water Pollution</option>
+  <option value="Waste Pollution">Waste Pollution</option>
+  <option value="Visible Vehicular Pollution">Visible Vehicular Pollution</option>
+  <option value="Traffic Congestion">Traffic Congestion</option>
+  <option value="Industrial Emission">Industrial Emission</option>
+  <option value="Open/Garbage Burning">Open/Garbage Burning</option>
+  <option value="Construction/Demolition Activity">Construction/Demolition Activity</option>
+  <option value="Leaf Burning">Leaf Burning</option>
+  <option value="Road Dust">Road Dust</option>
+  <option value="Unpaved Road/Pit">Unpaved Road/Pit</option>
+  <option value="Fire in Landfill Sites">Fire in Landfill Sites</option>
+  <option value="Generator">Generator</option>
+  <option value="Pollution From Illegal Industry">Pollution From Illegal Industry</option>
+  <option value="Open Dumping of Garbage">Open Dumping of Garbage</option>
+  <option value="Industrial Waste Dumping">Industrial Waste Dumping</option>
+  <option value="Pond Filling">Pond Filling</option>
+  <option value="Others">Others</option>
+  <option value="Poultry">Poultry</option>
+  <option value="Ceremony Hall">Ceremony Hall</option>
+  <option value="Mobile Tower">Mobile Tower</option>
+  <option value="Loudspeaker/DJ Box">Loudspeaker/DJ Box</option>
+  <option value="Tree Cutting">Tree Cutting</option>
+  <option value="Stagnant Water">Stagnant Water</option>
+  <option value="Firecracker Sound Pollution">Firecracker Sound Pollution</option>
+  <option value="Smell">Smell</option>
+  <option value="Noise Pollution">Noise Pollution</option></select></td>
+  <td class="form_txt">Industry Category</td>
+  <td class="form_txt">
+  <select name="industrySegment" class="select" id="industry"><option value="#">Select</option>
+  <option value="Red">Red</option>
+  <option value="Orange">Orange</option>
+  <option value="Greeen">Green</option>
+  <option value="White">White</option>
+  <option value="Exempted">Exempted</option></select>
+  </td>
+  </tr>
+  <tr>
+  <td class="form_txt">Source of Complaint *</td>
+  <td class="form_txt">
+  <select name="callSource" class="select" id="callsource"><option value="#">Select</option>
+  <option value="Help Desk Call">Help Desk Call</option>
+  <option value="Email">Email</option>
+  <option value="Paribesh App">Paribesh App</option>
+  <option value="Letter">Letter By Post</option>
+  <option value="Grievance Form">Grievance Form</option>
+  <option value="Social Network">Social Network</option></select>
+  </td>
+  <td class="form_txt">Diary No</td>
+  <td class="form_txt"><input type="text" name="diaryNo" value="" class="entry" id="diaryNo" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Assignment *</td>
+  <td class="form_txt">
+  <select name="assignToDivId" class="select" id="assignedoffice"><option value="1">Head Office PG Cell</option></select>
+  </td>
+  <td class="form_txt">Ref. No. (MS/Chairman Reference)</td>
+  <td class="form_txt"><input type="text" name="refNo" value="" class="entry" id="refNo" autocomplete="off">
+  <input type="hidden" name="isDoubt" value="N">
+  </td>
+  </tr>
+  <tr>
+  <td class="form_txt">Complain Receipt Date</td>
+  <td class="form_txt" colspan="3"><input type="text" name="callDate" value="07-09-2022 15:51" class="entry" id="calldate" autocomplete="off"></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Complain Description</td>
+  <td class="form_txt" colspan="3"><textarea name="complainDesc" class="area_complain" id="complaindesc"></textarea></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Agent Remarks </td>
+  <td class="form_txt" colspan="3"><textarea name="agentRemarks" class="area_complain" id="complaindesc"></textarea></td>
+  </tr>
+  <tr>
+  <td class="form_txt">Complain Status</td>
+  <td class="form_txt" colspan="3">
+  <select name="caseStatus" class="select" id="status"><option value="Open">Open</option>
+  <option value="Closed">Closed</option></select>
+  </td>
+  </tr>
+  </tbody></table>
+  <div class="button_holder"><input type="button" class="save" onclick="save_form(this.form)"> <input type="button" class="cancel"></div>
+  
+  <!-- content end -->
+  </td>
+  </tr>
+  </tbody></table>
+  </form>
+  
+  <div id="overlay">
+      <div class="popup_search" id="pop_search">
+            
+      </div>
+  </div>
+  
+  
+  
+  
+  </body></html>
